@@ -36,11 +36,10 @@ const isDotMapFile = (fileName) => {
     return fileName.indexOf('.map') !== -1;
 };
 (0, fs_1.readdirSync)(PATH_ROUTER).filter((fileName) => {
-    var _a;
     const cleanName = cleanFileName(fileName);
     const isMapFile = isDotMapFile(fileName);
     if (cleanName !== 'index' && !isMapFile) {
-        (_a = `./${cleanName}`, Promise.resolve().then(() => __importStar(require(_a)))).then((moduleRouter) => {
+        Promise.resolve().then(() => __importStar(require(`./${cleanName}`))).then((moduleRouter) => {
             console.log(`Loading routes ... /${cleanName} was loaded.`);
             router.use(`/${cleanName}`, moduleRouter.router);
         });
