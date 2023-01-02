@@ -1,4 +1,4 @@
-# Telegram Bot - SOMA
+# Empresa A - Backend
 ## Steps to configure project
 
 
